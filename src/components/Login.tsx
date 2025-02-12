@@ -132,7 +132,7 @@ const Login = () => {
                   </div>
                   <div className='lg:w-1/2 w-full lg:block hidden'>
                       <div className="lg:absolute flex justify-center flex-col items-center lg:right-[27px] lg:top-0 xl:w-[47.55%] lg:w-[43%] w-full bg-blue rounded-[20px] xl:h-[899px] h-full">
-                          <Image width={759} height={899}
+                          <Image width={617} height={899}
                               src="/assets/images/png/blue-box-ellipse.png"
                               alt='ellipse'
                               className="w-[81.3%] 2xl:h-[60.2%]"
