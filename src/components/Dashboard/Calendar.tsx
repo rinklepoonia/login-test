@@ -1,13 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
-import { InlineWidget, PopupWidget } from "react-calendly";
+import { InlineWidget} from "react-calendly";
 
 const Calendar = () => {
-  const [rootElement, setRootElement] = useState<HTMLElement | null>(null);
-
-  useEffect(() => {
-    setRootElement(document.body); 
-  }, []);
 
   return (
     <div className="flex flex-col items-center justify-center py-10 px-4 container">

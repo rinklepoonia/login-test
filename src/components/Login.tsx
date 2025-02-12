@@ -6,10 +6,6 @@ import Swal from 'sweetalert2';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
-interface FormValues {
-  email: string;
-  password: string;
-}
 const Login = () => {
       const router = useRouter();
 
@@ -82,9 +78,9 @@ const Login = () => {
     
   return (
       <div className='pt-5 pb-5 sm:pb-14 md:pb-[60px] xl:pb-[201px] 2xl:pb-[310px] relative md:my-[30px] max-w-[1920px] mx-auto '>
-          <div className='container xl:max-w-[1128px] mx-auto xl:px-0 max-sm:px-[35px]'>
+          <div className='container xl:max-w-[1128px] mx-auto xl:px-0 px-5 max-sm:px-[35px]'>
               <div className='flex flex-row flex-wrap items-center'>
-                  <div className="max-lg:w-full xl:w-1/2 w-full flex flex-col gap-10 sm:gap-14 lg:gap-[100px] xl:gap-[138px] justify-between xl:max-w-[456px]">
+                  <div className="max-lg:w-full lg:w-1/2 w-full flex flex-col gap-10 sm:gap-14 lg:gap-[100px] xl:gap-[138px] justify-between xl:max-w-[456px]">
                       <Image width={163} height={31} src="/assets/images/svg/lyrics-logo.svg" alt='lyrics-logo' />
                       <div className='mb-0'>
                           <h3 className='font-semibold text-3xl leading-194 text-light-blue tracking-sm'>Welcome Back</h3>
@@ -115,7 +111,7 @@ const Login = () => {
                     <div className='relative '>
                       <input   onChange={() => setIsChecked(!isChecked)} type="checked" className='size-5 border border-solid border-off-grey rounded-[6px] outline-none cursor-pointer' />
                       {isChecked && (
-                        <Image className='absolute  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none' width={15} height={10} src="/assets/images/svg/check-mark.svg" alt='check-mark' />
+                        <Image className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none' width={15} height={10} src="/assets/images/svg/check-mark.svg" alt='check-mark' />
                       )}
                     </div>
                                   <p className='font-inter font-normal leading-normal text-off-grey-100 text-base'>Remember for 30 days</p>    
@@ -134,9 +130,9 @@ const Login = () => {
                           </div>
                       </div>
                   </div>
-                  <div className='xl:w-1/2 w-full xl:block hidden'>
-                      <div className="lg:absolute flex justify-center flex-col items-center lg:right-[27px] lg:top-0 lg:w-[47.55%] w-full bg-blue rounded-[20px] h-full">
-                          <Image width={617} height={541}
+                  <div className='lg:w-1/2 w-full lg:block hidden'>
+                      <div className="lg:absolute flex justify-center flex-col items-center lg:right-[27px] lg:top-0 xl:w-[47.55%] lg:w-[43%] w-full bg-blue rounded-[20px] xl:h-[899px] h-full">
+                          <Image width={759} height={899}
                               src="/assets/images/png/blue-box-ellipse.png"
                               alt='ellipse'
                               className="w-[81.3%] 2xl:h-[60.2%]"

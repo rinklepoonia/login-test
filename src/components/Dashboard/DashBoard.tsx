@@ -1,11 +1,9 @@
 "use client"
-import { useState } from 'react';
 import { DASHBOARD_DATA_LIST } from '@/utils/helper';
 import Capital from './Capital';
 import Calendar from './Calendar';
 import ImageUpload from './ImageUpload';
 import { useRouter, useSearchParams } from 'next/navigation';
-import Link from 'next/link';
 
 const DashBoard = () => {
     const router = useRouter();
@@ -23,11 +21,11 @@ const DashBoard = () => {
 
   const renderComponent = () => {
     switch (activeTab) {
-      case 'Question1':
+      case 'Question 1':
         return <Capital />;
-      case 'Question2':
+      case 'Question 2':
         return <Calendar />;
-      case 'Question3':
+      case 'Question 3':
         return <ImageUpload/>;
       default:
         return <p className="text-white text-2xl">Select a tab</p>;

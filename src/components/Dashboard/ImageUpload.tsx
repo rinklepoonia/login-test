@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useState } from 'react'
 const ImageUpload = () => {
    const [images, setImages] = useState<string[]>([]);
@@ -22,7 +23,7 @@ const ImageUpload = () => {
             />
          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4">
           {images.map((image, index) => (
-            <img
+            <Image
               key={index}
               src={image}
               alt={`Uploaded Preview ${index + 1}`}
