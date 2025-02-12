@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import CustomInput from './common/CustomInput';
 import Swal from 'sweetalert2';
@@ -7,7 +7,13 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 const Login = () => {
-      const router = useRouter();
+  const router = useRouter();
+  useEffect(() => {
+    const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
+    if (isAuthenticated) {
+      router.push("/dashboard");
+    }
+  }, [router.push]); // Only depend on router.push
 
   // State for form values & errors
   const [formData, setFormData] = useState({
@@ -77,10 +83,10 @@ const Login = () => {
 
     
   return (
-      <div className='pt-5 pb-5 sm:pb-14 md:pb-[60px] xl:pb-[201px] 2xl:pb-[310px] relative md:my-[30px] max-w-[1920px] mx-auto '>
+      <div className='pt-5 relative md:mt-[30px] max-w-[1920px] mx-auto min-h-screen'>
           <div className='container xl:max-w-[1128px] mx-auto xl:px-0 px-5 max-sm:px-[35px]'>
               <div className='flex flex-row flex-wrap items-center'>
-                  <div className="max-lg:w-full lg:w-1/2 w-full flex flex-col gap-10 sm:gap-14 lg:gap-[100px] xl:gap-[138px] justify-between xl:max-w-[456px]">
+                  <div className="max-lg:w-full lg:w-1/2 w-full flex flex-col gap-[90px] xl:gap-[138px] justify-between xl:max-w-[456px]">
                       <Image width={163} height={31} src="/assets/images/svg/lyrics-logo.svg" alt='lyrics-logo' />
                       <div className='mb-0'>
                           <h3 className='font-semibold text-3xl leading-194 text-light-blue tracking-sm'>Welcome Back</h3>
@@ -118,11 +124,11 @@ const Login = () => {
                               </div>
                               <Link href="" className='font-inter text-base font-normal leading-normal text-off-blue'>Forgot password</Link>
                           </div>
-                              <button type="submit" className='font-medium text-sm leading-171 text-white bg-light-black rounded-[9px] py-[10px] px-3 w-full mt-[33px] mb-1.5 border border-solid border-transparent hover:border-black hover:bg-transparent hover:text-black duration-300 ease-linear transition-all'>Get Started</button>
+                              <button type="submit" className='font-medium text-sm leading-171 text-white bg-light-black rounded-[9px] py-[10px] px-3 w-full mt-[33px] mb-1.5 border border-solid border-transparent hover:border-black hover:bg-transparent hover:text-black duration-300 ease-linear transition-all'>Sign In</button>
                               </form>
                           <button className='font-medium text-sm leading-171 text-light-black border border-solid border-off-grey flex items-center w-full py-[10px] px-3 justify-center gap-[10px] rounded-[9px]'>
                                <Image width={22} height={22} src="/assets/images/svg/google.svg" alt='lyrics-logo' />
-                              Sing in with Goolge
+                              Sign in with Google
                           </button>
                           <div className='flex items-center gap-[10px] mt-[18px] sm:justify-center'>
                               <p className='font-inter font-normal text-base leading-normal text-off-grey-100'>Don’t have an account?</p>
