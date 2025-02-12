@@ -34,7 +34,7 @@ const DashBoard = () => {
 
   return (
     <div className="flex md:gap-20 gap-10 max-md:flex-wrap">
-      <div className="bg-black w-[400px] md:h-screen h-[400px] max-md:w-full px-5 pt-5 pb-10 flex flex-col justify-between">
+      <div className="bg-black w-[650px] md:h-screen h-[400px] max-md:w-full px-5 pt-5 pb-10 flex flex-col justify-between">
         <div>
             <p className="text-white text-3xl leading-normal font-normal pb-5 text-center">Welcome to dashboard</p>
             {DASHBOARD_DATA_LIST.map((tab, i) => (
